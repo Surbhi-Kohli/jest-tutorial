@@ -7,8 +7,10 @@ For Jest to understand how to transpile our code, we need to have babel-jest ins
 jest-cli as babel-jest is a dependency of jest-runtime which itself is a dependency of jest-cli
 
 jest-cli@15.1.0
-|_ jest-runtime@15.1.0
-   |_babel-jest@15.1.0
+  |_
+     jest-runtime@15.1.0
+      |_
+        babel-jest@15.1.0
    
 jest-runtime is responsible for instrumenting our code for code-coverage and the way it does that is with a babel plugin and thats y babel-jest is used.
 
