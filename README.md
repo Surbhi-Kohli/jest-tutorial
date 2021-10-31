@@ -1,4 +1,4 @@
-# jest-tutorial
+# jest-setup tutorial
 Here we have sum.js and we are gonna write tests for this module using jest.
 We will install jest-cli to begin with and write tests in sum.test.js.The jest tests can be writteen in files with name.test.js or name.spec.js or the test 
 files can be within "__ tests__" folder.
