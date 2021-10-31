@@ -6,10 +6,16 @@ Now because of the way npm scrips work,we can use the jest binary to run our tes
 
 The test can be run with npm run test or npm test or npm t
 
+Jest does a lot of cool things and one of those is that it simulates a browser environment using jsdom
 
-//Need to confirm on this.May be doesnt work on latest versions as illustrated
+Inside of our test, we can say :
+console.log(window)//object exists on global, we want to avoid this so we need to configure the test env for jest.
 
-  console.log(window)//object exists on global, we want to avoid this so we need to configure the test env for jest.
+We're in a node environment. We're running this on the command line, running this through node. If we run npm t, we're going to see that window is actually an object that exists on the global. We can actually reference it and use it.
+But we want to avoid this because that's extra weight in our test, extra memory. 
+It takes some extra time to allocate for these objects. We're going to configure the test environment for Jest.
+
+  
   Add the folllowing in package.json
   So that the window is not defined
 
@@ -17,4 +23,6 @@ The test can be run with npm run test or npm test or npm t
     "testEnvironment":"node"
   },
 
-In newer 
+ Now, it doesn't need to simulate the browser environment. If we re-run our test again with that console.log window, we're going to see a reference error because window is not defined.
+
+now we can remove the console.log statement
