@@ -1,7 +1,7 @@
 # jest-tutorial
 Here we have sum.js and we are gonna write tests for this module using jest.
 We will install jest-cli to begin with and write tests in sum.test.js.The jest tests can be writteen in files with name.test.js or name.spec.js or the test 
-files can be within __tests__ folder.
+files can be within "__tests__" folder.
 Now because of the way npm scrips work,we can use the jest binary to run our test in npm scripts.We see that in node_modules under .bin folder,we have jest.So in package.json,In scripts  add "test" entry with value "jest".
 
 The test can be run with npm run test or npm test or npm t
