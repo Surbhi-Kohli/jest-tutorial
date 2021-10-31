@@ -1,4 +1,4 @@
-# jest-tutorial
+# Add babel integration with jest
 In this branch ,we are configuring babel to transpile our code using babelrc. We're running our code using Node 6 which has support for most of ES 6. 
 But here in our code, we're using ES 6 modules here and a stage two feature which are both unavailable in Node 6.The same would apply also if you 
 were using React in JSX or any additional Babel plugins.
