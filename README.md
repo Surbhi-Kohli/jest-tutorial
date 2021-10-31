@@ -8,7 +8,8 @@ The test can be run with npm run test or npm test or npm t
 
 
 //Need to confirm on this.May be doesnt work on latest versions as illustrated
-  console.log(window)//object exists on global,we want to avoid this so we need to configure the test env for jest.
+
+  console.log(window)//object exists on global, we want to avoid this so we need to configure the test env for jest.
   Add the folllowing in package.json
   So that the window is not defined
 
