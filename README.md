@@ -37,7 +37,7 @@ package.json
 ```
  Now, if we run ```npm t ```, we'll see that Jest instruments that file for coverage even though it's not
  explicitly included our test. 
- ***Note that this is excluding our test files for us automatically. Even though sum.test.js actually matches the glob src/*.js, 
+ *** Note that this is excluding our test files for us automatically. Even though sum.test.js actually matches the glob src/*.js, 
  Jest is automatically excluding that test file because we don't want the code coverage stats of our test files loading our project coverage numbers.
  
 Finally, as we work our way to better code coverage in our project, we can configure Jest with a coverage threshold.This means that if our 
