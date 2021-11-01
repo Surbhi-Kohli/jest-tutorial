@@ -22,12 +22,14 @@ Another thing to add is .babelrc file with the following contents:
 {
   "presets": ["es2015", "stage-2"]
 }
+```
 a preset is a set of plugins used to support particular language features. The two presets Babel uses by default:
 
 es2015: Adds support for ES2015 (or ES6) JavaScript
 react: Adds support for JSX
 
-Beyond ES7, proposed JavaScript features can exist in various stages. A feature can be an experimental proposal, one that the community is still working out the details for ("stage 1"). Experimental proposals are at risk of being dropped or modified at any time. Or a feature might already be "ratified," which means it will be included in the next release of JavaScript ("stage 4").
+Beyond ES7, proposed JavaScript features can exist in various stages. A feature can be an experimental proposal, one that the community 
+is still working out the details for ("stage 1"). Experimental proposals are at risk of being dropped or modified at any time. Or a feature might already be "ratified," which means it will be included in the next release of JavaScript ("stage 4").
 
 From the Babel docs:
 
@@ -49,7 +51,8 @@ We can customize Babel with presets and/or plugins to take advantage of these up
 so if we run `npm run test`
  everything will work perfectly even though I'm using these features that aren't supported in Node 6 and that's because we have .
  
-Despite this, it's still recommended to explicitly add babel-jest as a dev dependency in your package.json to ensure that people using older versions of NPM don't have any trouble.
+Despite this, it's still recommended to explicitly add babel-jest as a dev dependency in your package.json to ensure that people using older 
+versions of NPM don't have any trouble.
 We'll go ahead and do that now by running npm install --save-dev babel-jest.
 
 With that installed, we'll verify that in our package JSON. It has been added to our dev dependencies as 15.00.
