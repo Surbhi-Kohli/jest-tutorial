@@ -1,4 +1,4 @@
-# jest-tutorial
+# Track project coverage with jest
 Jest comes pre-packaged with the ability to track code coverage for the modules you're testing, but it takes a little extra work to make 
 it track untested files as well. Let's look at what Jest can do for you, what you have to do yourself, and how to setup code 
 coverage thresholds so you can work to improving the code coverage numbers for your projects.
