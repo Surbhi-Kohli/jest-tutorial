@@ -44,18 +44,13 @@ stage-4 - Finished: will be added to the next yearly release.
 ```
 We can customize Babel with presets and/or plugins to take advantage of these upcoming or experimental features.
 
-//Remember: In the default Babel setup, es2015 and react are automatically enabled -- no configuration needed.
 
-```
-
-
-
-so if we run `npm run test`
- everything will work perfectly even though I'm using these features that aren't supported in Node 6 and that's because we have .
+So if we run ```npm run test```
+ everything will work perfectly even though I'm using these features that aren't supported in Node 6 and that's because we have babel-jest.
  
 Despite this, it's still recommended to explicitly add babel-jest as a dev dependency in your package.json to ensure that people using older 
 versions of NPM don't have any trouble.
-We'll go ahead and do that now by running npm install --save-dev babel-jest.
+We'll go ahead and do that now by running ```npm install --save-dev babel-jest ```.
 
 With that installed, we'll verify that in our package JSON. It has been added to our dev dependencies as 15.00.
 We're all set to have Jest use Babel to transpile our test.
