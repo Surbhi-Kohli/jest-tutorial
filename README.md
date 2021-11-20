@@ -62,3 +62,26 @@ const ourCode=require('./externalModule').default;
 //use ourCode()
 
 ```
+X=External Modules
+Y=Test Subject
+             
+            | module.exports| export |
+            | ------------- |--------|
+      import|      A        |   A    |
+            |---------------|--------|
+test subject|      A        |.  B    |
+
+Taking 'A' as being no modification needed to the standard syntax and 'B' as some modification,we can see this as illustrated above.
+
+This also directly relates to how jest mocks will differ.
+For type 'A',this can be seen as a function returning a result:
+```
+jest.mock("./externalModule",()=>"rest");
+```
+For type 'B',these can be seen as an object containing a function that returns a result.
+
+```
+jest.mock("./externalModule",()=>({
+  default:()=>'mock result'
+});
+```
