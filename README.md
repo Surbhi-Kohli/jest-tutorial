@@ -65,11 +65,12 @@ const ourCode=require('./externalModule').default;
 X=External Modules
 Y=Test Subject
              
-            | module.exports| export |
-            | ------------- |--------|
-      import|      A        |   A    |
-            |---------------|--------|
-test subjec |      A        |  B     |
+             | module.exports| export |
+             | ------------- |--------|
+      import |      A        |   A    |
+             |---------------|--------|
+test subject |      A        |  B     |
+             |---------------|--------|
 
 Taking 'A' as being no modification needed to the standard syntax and 'B' as some modification,we can see this as illustrated above.
 
