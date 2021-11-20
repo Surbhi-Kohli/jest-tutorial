@@ -6,9 +6,11 @@ were using React in JSX or any additional Babel plugins.
 For Jest to understand how to transpile our code, we need to have babel-jest installed.The jest-babel package would already be installed when u install 
 jest-cli as babel-jest is a dependency of jest-runtime which itself is a dependency of jest-cli
 
+```
 jest-cli@15.1.0
 |_ jest-runtime@15.1.0
    |_babel-jest@15.1.0
+```   
    
 jest-runtime is responsible for instrumenting our code for code-coverage and the way it does that is with a babel plugin and thats y babel-jest is used.
 
@@ -18,3 +20,45 @@ We'll go ahead and do that now by running npm install --save-dev babel-jest.
 With that installed, we'll verify that in our package JSON. It has been added to our dev dependencies as 15.00We're all set to have Jest use Babel to transpile our test.
  
    
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### CommonJS  + ESM 
+TheESM and commonjs are different module systems and have an added complexity when used alongside each other.
+
+Case 1: When using export with require
+ 
+
+```
+//externalModule.js
+const ourCode=()=>'result';
+module.exports=ourCode;
+________________________________
+//testSubject.js
+import ourCode from "./externalModule"
+//use ourCode()
+
+```
+Case 2: When using import with module.exports
+
+```
+//externalModule.js
+const ourCode=()=>'result';
+export default ourCode;
+________________________________
+//testSubject.js
+const ourCode=require('./externalModule');//gives error
+//use ourCode()
+
+```
+The commonJs module doesn't understand the ESM it is trying to require.This is easily fixed by adding a ```.functionNameBeingExported``` to the require,which for a default export is ```default```
+
+```
+//externalModule.js
+const ourCode=()=>'result';
+export default ourCode;
+________________________________
+//testSubject.js
+const ourCode=require('./externalModule').default;
+//use ourCode()
+
+```
